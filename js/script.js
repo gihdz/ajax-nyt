@@ -39,6 +39,8 @@ $.getJSON(url, function(data){
  });
  $nytHeaderElem.text('New York Times Articles About '+ $city.val());
  $nytElem.append(lis);
+}).fail(function(){
+    $nytHeaderElem.text('New York Times Articles Could Not Be Loaded');
 });
 
 
