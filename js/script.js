@@ -44,7 +44,7 @@ $.getJSON(url, function(data){
 });
 
 //due to jsonp does not supports error handling, this timer is created to be cleaned out in case the wikipedia request success.
-var wikiRequestTimeout = seTimeOut(function(){
+var wikiRequestTimeout = setTimeout(function(){
     $wikiElem.text('failed to get wikipedia resources');
 }, 8000);
 var wikipediaApiUrl = 'https://en.wikipedia.org/w/api.php?format=json&action=opensearch&search=' + $city.val() + '&callback=?';
